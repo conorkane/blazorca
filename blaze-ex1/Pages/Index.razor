@@ -1,0 +1,96 @@
+﻿@page "/"
+@inject HttpClient Http
+
+@using System.Runtime.Serialization
+
+
+<h1>Search a movie</h1>
+
+@if (data == null)
+{
+    <p><en>Loading data...</en></p>
+}
+else
+{
+    <div>
+        <label for="movie">Movie</label>
+        <input id="movie" @bind="movie">
+        <p></p>
+    </div>
+    <div>
+        <button @onclick="Lookup">Lookup</button>
+    </div><br />          
+    @if (found)
+    { 
+        <div>
+            Movie name: @data.results[0].original_title
+        </div>
+    }
+}
+@errormessage
+
+
+@code{
+    private String movie = "fight club";
+    private bool found;
+
+    private Root data;
+    private String errormessage;
+
+    private async Task GetMovieAsync()
+    {
+        try
+        {
+            string uri = "https://api.themoviedb.org/3/search/movie?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + movie;
+            data = await Http.GetFromJsonAsync<Root>(uri);
+            found = true;
+            errormessage = String.Empty;
+
+        }
+        catch(Exception e)
+        {
+            found = false;
+            errormessage = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetMovieAsync();
+    }
+    
+    //lookup
+    public async void Lookup()
+    {
+        await GetMovieAsync();
+        StateHasChanged();
+    }
+
+    public class Result
+    {
+        public bool adult { get; set; }
+        public string backdrop_path { get; set; }
+        public List<int> genre_ids { get; set; }
+        public int id { get; set; }
+        public string original_language { get; set; }
+        public string original_title { get; set; }
+        public string overview { get; set; }
+        public double popularity { get; set; }
+        public string poster_path { get; set; }
+        public string release_date { get; set; }
+        public string title { get; set; }
+        public bool video { get; set; }
+        public double vote_average { get; set; }
+        public int vote_count { get; set; }
+    }
+
+    public class Root
+    {
+        public int page { get; set; }
+        public List<Result> results { get; set; }
+        public int total_pages { get; set; }
+        public int total_results { get; set; }
+    }
+
+
+}
