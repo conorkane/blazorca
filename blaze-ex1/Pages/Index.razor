@@ -22,9 +22,13 @@ else
     </div><br />          
     @if (found)
     { 
-        <div>
-            Movie name: @data.results[0].original_title
-        </div>
+<div>
+    Movie name: @data.results[0].original_title
+    <br><br>
+    Details: @data.results[0].overview
+    <br><br>
+    Release Date: @data.results[0].release_date
+</div>
     }
 }
 @errormessage

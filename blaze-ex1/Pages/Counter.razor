@@ -1,19 +1,101 @@
-﻿@page "/counter"
+﻿@page "/TvShows"
+@inject HttpClient Http
 
-<h1>Counter</h1>
+@using System.Runtime.Serialization
 
-<p>Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<h1>Search a movie</h1>
 
-@code {
-    private int currentCount = 0;
+@if (data == null)
+{
+    <p><en>Loading data...</en></p>
+}
+else
+{
+    <div>
+        <label for="show">Show</label>
+        <input id="show" @bind="show">
+        <p></p>
+    </div>
+    <div>
+        <button @onclick="Lookup">Lookup</button>
+    </div>
+    <br />
 
-    [Parameter]
-    public int IncrementAmount { get; set; } = 1;
-
-    private void IncrementCount()
+    @if (found)
     {
-        currentCount += IncrementAmount;
+        <div>
+            Tv Show: @data.results[0].name
+            <br><br>
+            Details: @data.results[0].overview
+            <br><br>
+            Release Date: @data.results[0].first_air_date
+        </div>
     }
+}
+@errormessage
+
+
+@code{
+    private String show = "breaking bad";
+    private bool found;
+
+    private Root data;
+    private String errormessage;
+
+    private async Task GetShowAsync()
+    {
+        try
+        {
+            string uri = "https://api.themoviedb.org/3/search/tv?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + show;
+            data = await Http.GetFromJsonAsync<Root>(uri);
+            found = true;
+            errormessage = String.Empty;
+
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errormessage = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetShowAsync();
+    }
+
+    //lookup
+    public async void Lookup()
+    {
+        await GetShowAsync();
+        StateHasChanged();
+    }
+
+    public class Result
+    {
+        public string backdrop_path { get; set; }
+        public string first_air_date { get; set; }
+        public List<int> genre_ids { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public List<string> origin_country { get; set; }
+        public string original_language { get; set; }
+        public string original_name { get; set; }
+        public string overview { get; set; }
+        public double popularity { get; set; }
+        public string poster_path { get; set; }
+        public double vote_average { get; set; }
+        public int vote_count { get; set; }
+    }
+
+    public class Root
+    {
+        public int page { get; set; }
+        public List<Result> results { get; set; }
+        public int total_pages { get; set; }
+        public int total_results { get; set; }
+    }
+
+
 }
