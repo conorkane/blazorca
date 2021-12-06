@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\blaze-ex1"
+    "\\blaze-ex1",
+    "\\blaze-ex1\\Pages"
   ],
-  "SelectedNode": "\\blaze-ex1\\Program.cs",
+  "SelectedNode": "\\blaze-ex1.sln",
   "PreviewInSolutionExplorer": false
 }

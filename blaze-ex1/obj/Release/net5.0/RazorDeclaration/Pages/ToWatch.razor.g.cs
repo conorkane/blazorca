@@ -82,15 +82,8 @@ using blaze_ex1.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\Counter.razor"
-using System.Runtime.Serialization;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/TvShows")]
-    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
+    public partial class ToWatch : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,69 +91,25 @@ using System.Runtime.Serialization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\Counter.razor"
-      
-    private String show = "breaking bad";
-    private bool found;
-
-    private Root data;
-    private String errormessage;
-
-    private async Task GetShowAsync()
-    {
-        try
-        {
-            string uri = "https://api.themoviedb.org/3/search/tv?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + show;
-            data = await Http.GetFromJsonAsync<Root>(uri);
-            found = true;
-            errormessage = String.Empty;
-
-        }
-        catch (Exception e)
-        {
-            found = false;
-            errormessage = e.Message;
-        }
-    }
+#line 37 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\ToWatch.razor"
+       
+    private WeatherForecast[] forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        await GetShowAsync();
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 
-    //lookup
-    public async void Lookup()
+    public class WeatherForecast
     {
-        await GetShowAsync();
-        StateHasChanged();
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
-
-    public class Result
-    {
-        public string backdrop_path { get; set; }
-        public string first_air_date { get; set; }
-        public List<int> genre_ids { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public List<string> origin_country { get; set; }
-        public string original_language { get; set; }
-        public string original_name { get; set; }
-        public string overview { get; set; }
-        public double popularity { get; set; }
-        public string poster_path { get; set; }
-        public double vote_average { get; set; }
-        public int vote_count { get; set; }
-    }
-
-    public class Root
-    {
-        public int page { get; set; }
-        public List<Result> results { get; set; }
-        public int total_pages { get; set; }
-        public int total_results { get; set; }
-    }
-
-
 
 #line default
 #line hidden

@@ -1036,9 +1036,6 @@ C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.csproj
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.RazorComponent.input.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -1049,9 +1046,6 @@ C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.TagHel
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.TagHelpers.output.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.RazorCoreGenerate.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -1262,3 +1256,9 @@ C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.csproj
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.dll
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\ref\blaze-ex1.dll
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.pdb
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\MovieSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\TvSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\MovieSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\TvSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\ToWatch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\Razor\Pages\ToWatch.razor.g.cs

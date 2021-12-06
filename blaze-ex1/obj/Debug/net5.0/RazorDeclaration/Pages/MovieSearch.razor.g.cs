@@ -82,8 +82,15 @@ using blaze_ex1.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\MovieSearch.razor"
+using System.Runtime.Serialization;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    public partial class MovieSearch : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,25 +98,71 @@ using blaze_ex1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
+#line 46 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\MovieSearch.razor"
+      
+    private String movie = "fight club";
+    private bool found;
+
+    private Root data;
+    private String errormessage;
+
+    private async Task GetMovieAsync()
+    {
+        try
+        {
+            string uri = "https://api.themoviedb.org/3/search/movie?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + movie;
+            data = await Http.GetFromJsonAsync<Root>(uri);
+            found = true;
+            errormessage = String.Empty;
+
+        }
+        catch(Exception e)
+        {
+            found = false;
+            errormessage = e.Message;
+        }
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        await GetMovieAsync();
     }
 
-    public class WeatherForecast
+    //lookup
+    public async void Lookup()
     {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        await GetMovieAsync();
+        StateHasChanged();
     }
+
+    public class Result
+    {
+        public bool adult { get; set; }
+        public string backdrop_path { get; set; }
+        public List<int> genre_ids { get; set; }
+        public int id { get; set; }
+        public string original_language { get; set; }
+        public string original_title { get; set; }
+        public string overview { get; set; }
+        public double popularity { get; set; }
+        public string poster_path { get; set; }
+        public string release_date { get; set; }
+        public string title { get; set; }
+        public bool video { get; set; }
+        public double vote_average { get; set; }
+        public int vote_count { get; set; }
+    }
+
+    public class Root
+    {
+        public int page { get; set; }
+        public List<Result> results { get; set; }
+        public int total_pages { get; set; }
+        public int total_results { get; set; }
+    }
+
+
 
 #line default
 #line hidden

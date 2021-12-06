@@ -83,14 +83,14 @@ using blaze_ex1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\Index.razor"
+#line 4 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\MovieSearch.razor"
 using System.Runtime.Serialization;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class MovieSearch : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,7 +98,7 @@ using System.Runtime.Serialization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\Index.razor"
+#line 46 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\MovieSearch.razor"
       
     private String movie = "fight club";
     private bool found;
@@ -123,11 +123,12 @@ using System.Runtime.Serialization;
         }
     }
 
+
     protected override async Task OnInitializedAsync()
     {
         await GetMovieAsync();
     }
-    
+
     //lookup
     public async void Lookup()
     {

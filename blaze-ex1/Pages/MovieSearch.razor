@@ -1,4 +1,4 @@
-﻿@page "/TvShows"
+﻿@page "/"
 @inject HttpClient Http
 
 @using System.Runtime.Serialization
@@ -13,78 +13,87 @@
 else
 {
     <div>
-        <label for="show">Show</label>
-        <input id="show" @bind="show">
+        <label for="movie">Movie</label>
+        <input id="movie" @bind="movie">
         <p></p>
     </div>
     <div>
         <button @onclick="Lookup">Lookup</button>
-    </div>
-    <br />
-
+    </div><br />          
     @if (found)
-    {
-        <div>
-            Tv Show: @data.results[0].name
-            <br><br>
-            Details: @data.results[0].overview
-            <br><br>
-            Release Date: @data.results[0].first_air_date
+    { 
+<div>
+    <div class="image py-2">
+        <div class="card-group">
+            <div>
+                <img class="poster lazyload lazyloaded" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/@data.results[0].poster_path" alt="movie poster">
+            </div>
+            <div class="card px-2">
+                <h5 class="card-title">Movie name: @data.results[0].original_title</h5>
+                Details: @data.results[0].overview
+                <br><br>
+                Release Date: @data.results[0].release_date
+            </div>
         </div>
+    </div>
+
+</div>
     }
 }
 @errormessage
 
 
 @code{
-    private String show = "breaking bad";
+    private String movie = "fight club";
     private bool found;
 
     private Root data;
     private String errormessage;
 
-    private async Task GetShowAsync()
+    private async Task GetMovieAsync()
     {
         try
         {
-            string uri = "https://api.themoviedb.org/3/search/tv?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + show;
+            string uri = "https://api.themoviedb.org/3/search/movie?api_key=ca42a258b7f32fa28593ca9289a55adb&query=" + movie;
             data = await Http.GetFromJsonAsync<Root>(uri);
             found = true;
             errormessage = String.Empty;
 
         }
-        catch (Exception e)
+        catch(Exception e)
         {
             found = false;
             errormessage = e.Message;
         }
     }
 
+
     protected override async Task OnInitializedAsync()
     {
-        await GetShowAsync();
+        await GetMovieAsync();
     }
 
     //lookup
     public async void Lookup()
     {
-        await GetShowAsync();
+        await GetMovieAsync();
         StateHasChanged();
     }
 
     public class Result
     {
+        public bool adult { get; set; }
         public string backdrop_path { get; set; }
-        public string first_air_date { get; set; }
         public List<int> genre_ids { get; set; }
         public int id { get; set; }
-        public string name { get; set; }
-        public List<string> origin_country { get; set; }
         public string original_language { get; set; }
-        public string original_name { get; set; }
+        public string original_title { get; set; }
         public string overview { get; set; }
         public double popularity { get; set; }
         public string poster_path { get; set; }
+        public string release_date { get; set; }
+        public string title { get; set; }
+        public bool video { get; set; }
         public double vote_average { get; set; }
         public int vote_count { get; set; }
     }
