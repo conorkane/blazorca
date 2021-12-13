@@ -1116,7 +1116,6 @@ C:\Users\conor\source\repos\blazorca\blaze-ex1\bin\Debug\net5.0\wwwroot\_framewo
 C:\Users\conor\source\repos\blazorca\blaze-ex1\bin\Debug\net5.0\wwwroot\_framework\icudt_EFIGS.dat
 C:\Users\conor\source\repos\blazorca\blaze-ex1\bin\Debug\net5.0\wwwroot\_framework\icudt_no_CJK.dat
 C:\Users\conor\source\repos\blazorca\blaze-ex1\bin\Debug\net5.0\wwwroot\_framework\dotnet.5.0.12.js
-C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.csproj.AssemblyReference.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.AssemblyInfoInputs.cache
 C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\blaze-ex1.AssemblyInfo.cs
