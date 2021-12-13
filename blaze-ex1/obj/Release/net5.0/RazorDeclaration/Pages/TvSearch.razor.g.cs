@@ -100,7 +100,7 @@ using System.Runtime.Serialization;
 #nullable restore
 #line 48 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\TvSearch.razor"
       
-    private String show = "breaking bad";
+    public String show = "breaking bad";
     private bool found;
 
     private Root data;

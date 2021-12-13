@@ -170,3 +170,4 @@ C:\Users\conor\source\repos\blazorca\CaTests\bin\Debug\net5.0\tr\Microsoft.CodeA
 C:\Users\conor\source\repos\blazorca\CaTests\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\conor\source\repos\blazorca\CaTests\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\conor\source\repos\blazorca\CaTests\bin\Debug\net5.0\RichardSzalay.MockHttp.dll
+C:\Users\conor\source\repos\blazorca\CaTests\bin\Debug\net5.0\blaze-ex1.StaticWebAssets.xml

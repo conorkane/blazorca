@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\blaze-ex1",
-    "\\blaze-ex1\\Pages"
+    "\\blaze-ex1\\Pages",
+    "\\CaTests"
   ],
-  "SelectedNode": "\\blaze-ex1\\Pages\\MovieSearch.razor",
+  "SelectedNode": "\\CaTests\\UnitTest1.cs",
   "PreviewInSolutionExplorer": false
 }

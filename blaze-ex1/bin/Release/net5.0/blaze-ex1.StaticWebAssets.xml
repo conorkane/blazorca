@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\conor\source\repos\blazorca\blaze-ex1\bin\Release\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Release\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

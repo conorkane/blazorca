@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using Bunit;
-using blaze_ex1.Pages;
 using Microsoft.Extensions.DependencyInjection;
 using RichardSzalay.MockHttp;
 using System;
@@ -8,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using blaze_ex1.Pages;
 
 
 namespace CaTests
