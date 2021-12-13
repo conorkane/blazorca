@@ -69,26 +69,26 @@ namespace CaTests
 
             var cut = context.RenderComponent<MovieSearch>();
 
-            mock.When("https://localhost:44331/").Respond("application/json", "{'name' : 'Test McGee'}");
+            mock.When("https://localhost:44331/").Respond("application/json", "{'@data.results[0].original_title' : 'Fight Club'}");
 
             var client = new HttpClient(mock);
             
 
-            //var response = client.GetAsync("https://api.themoviedb.org/3/search/movie?api_key=ca42a258b7f32fa28593ca9289a55adb&amp;query=fight%20club");
+            var response = client.GetAsync("https://api.themoviedb.org/3/search/movie?api_key=ca42a258b7f32fa28593ca9289a55adb&amp;query=fight%20club");
 
             //assert
-            //cut.MarkupMatches("<h5 class='card-title'>Movie name: @data.results[0].original_title</h5>");
+            cut.MarkupMatches("<h5 class='card-title'>Movie name: @data.results[0].original_title</h5>");
         }
 
 
         [Test]
-        public void Bunit()
+        public void BunitMovieSearchTest()
         {
             using var context = new Bunit.TestContext();
-
+            MovieSearch acc = new MovieSearch();
             var cut = context.RenderComponent<MovieSearch>();
-            
 
+            cut.Render();
 
             var paraElm = cut.Find("h5");
 
@@ -97,7 +97,52 @@ namespace CaTests
             var paraElmText = paraElm.TextContent;
 
             //assert
-            paraElmText.MarkupMatches("Movie name: Fight Club");
+            paraElmText.MarkupMatches(acc.movie);
+        }
+
+
+        private Bunit.TestContext testContext;
+
+
+
+        [SetUp]
+        public void Setup()
+        {
+            testContext = new Bunit.TestContext();
+        }
+
+        [TearDown]
+        public void Teardown()
+        {
+            testContext.Dispose();
+        }
+
+        [Test]
+        public void bUnitMovieSearchTest2()
+        {
+            var cut = testContext.RenderComponent<MovieSearch>();
+            Assert.AreEqual(cut.Instance.movie, "fight club");
+           
+            cut.Instance.movie = "Thor";
+
+            cut.Instance.Lookup();
+
+            Assert.AreEqual(cut.Instance.movie, "Thor");
+            
+        }
+
+        [Test]
+        public void bUnitTvSearchTest()
+        {
+            var cut = testContext.RenderComponent<TvSearch>();
+            Assert.AreEqual(cut.Instance.show, "breaking bad");
+
+            cut.Instance.show = "Better call Saul";
+
+            cut.Instance.Lookup();
+
+            Assert.AreEqual(cut.Instance.show, "Better call Saul");
+
         }
 
 
