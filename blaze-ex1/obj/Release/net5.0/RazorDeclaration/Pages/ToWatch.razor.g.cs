@@ -82,7 +82,7 @@ using blaze_ex1.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ToWatch")]
     public partial class ToWatch : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -91,24 +91,24 @@ using blaze_ex1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\ToWatch.razor"
+#line 19 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\ToWatch.razor"
        
-    private WeatherForecast[] forecasts;
+    private IList<WatchListMovie> watchlist = new List<WatchListMovie>();
+    private string newMovie;
 
-    protected override async Task OnInitializedAsync()
+    private void AddToWatchList()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        if (!string.IsNullOrWhiteSpace(newMovie))
+        {
+            watchlist.Add(new WatchListMovie { Title = newMovie });
+            newMovie = string.Empty;
+        }
     }
 
-    public class WeatherForecast
+    public class WatchListMovie
     {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public string Title { get; set; }
+        public bool IsDone { get; set; }
     }
 
 #line default

@@ -1,0 +1,16 @@
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.csproj.AssemblyReference.cache
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.AssemblyInfoInputs.cache
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.AssemblyInfo.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.csproj.CoreCompileInputs.cache
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.RazorComponent.input.cache
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\MovieSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\ToWatch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Pages\TvSearch.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\conor\source\repos\blazorca\blaze-ex1\obj\Debug\net5.0\EADCA.RazorComponent.output.cache

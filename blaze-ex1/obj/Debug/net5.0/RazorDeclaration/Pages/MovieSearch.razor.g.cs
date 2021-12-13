@@ -100,7 +100,7 @@ using System.Runtime.Serialization;
 #nullable restore
 #line 46 "C:\Users\conor\source\repos\blazorca\blaze-ex1\Pages\MovieSearch.razor"
       
-    private String movie = "fight club";
+    public String movie = "fight club";
     private bool found;
 
     private Root data;

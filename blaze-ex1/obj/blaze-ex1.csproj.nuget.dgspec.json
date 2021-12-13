@@ -53,9 +53,21 @@
               "target": "Package",
               "version": "[5.0.12, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "bunit.web": {
+              "target": "Package",
+              "version": "[1.3.42, )"
+            },
+            "bunit.xunit": {
+              "target": "Package",
+              "version": "[1.0.0-preview-02, )"
             }
           },
           "imports": [
